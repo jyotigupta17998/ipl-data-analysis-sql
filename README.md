@@ -5,9 +5,12 @@ This project analyzes 12 years of IPL match data using MySQL.
 The dataset contains 1,076 matches and 1,06,670 ball-by-ball 
 deliveries from 2008 to 2020.
 
-## Dataset
+  ## Dataset
 - Source: Kaggle - IPL Complete Dataset 2008-2020
+- Link: https://www.kaggle.com/datasets/patrickb1912/ipl-complete-dataset-20082020
 - Tables: matches (1,076 rows) and deliveries (1,06,670 rows)
+- Note: Dataset not uploaded due to file size. 
+  Please download directly from Kaggle link above.
 
 ## Tools Used
 - MySQL
