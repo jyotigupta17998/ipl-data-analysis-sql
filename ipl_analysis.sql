@@ -46,3 +46,9 @@ AND dismissal_kind != ''
 GROUP BY bowler
 ORDER BY total_wickets DESC
 LIMIT 10;
+
+-- Query 6: Which venue hosted the most IPL matches?
+SELECT venue, COUNT(*) as total_matches
+FROM matches
+GROUP BY venue
+ORDER BY total_matches DESC;
