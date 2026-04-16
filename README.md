@@ -59,3 +59,8 @@ This is a common real-world dirty data problem.
 - JOIN across two tables
 - Data cleaning with IS NOT NULL and NOT IN
 - ORDER BY and LIMIT
+
+### 6. Which venue hosted the most matches?
+- Eden Gardens hosted 77 matches — most in IPL history
+- Wankhede Stadium second with 72 matches
+- Both are iconic cricket venues in India
