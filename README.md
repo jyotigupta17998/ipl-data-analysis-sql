@@ -58,6 +58,14 @@ deliveries from 2008 to 2020.
 - SL Malinga was most consistent wicket taker
   across multiple seasons
 
+  ### 9. Who has the best strike rate in IPL?
+- Minimum 200 balls faced filter applied to 
+  remove small sample sizes
+- GJ Maxwell leads with 169.71 strike rate
+- V Sehwag maintained 150+ strike rate across 
+  1,744 balls — remarkable consistency
+- Used HAVING clause to filter aggregated results
+
 ## Data Quality Issue Found and Fixed
 The dismissal_kind column contained text value 'NA' 
 instead of proper NULL for non-wicket deliveries.
