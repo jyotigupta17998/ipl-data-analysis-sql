@@ -91,3 +91,15 @@ SELECT season, bowler, total_wickets
 FROM season_wickets
 WHERE rank_in_season = 1
 ORDER BY season;
+
+-- Query 9: Top 10 batsmen by strike rate (min 200 balls)
+SELECT 
+    batter,
+    SUM(batsman_runs) as total_runs,
+    COUNT(*) as balls_faced,
+    ROUND((SUM(batsman_runs) / COUNT(*)) * 100, 2) as strike_rate
+FROM deliveries
+GROUP BY batter
+HAVING balls_faced > 200
+ORDER BY strike_rate DESC
+LIMIT 10;
