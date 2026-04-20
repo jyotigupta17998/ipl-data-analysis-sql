@@ -64,3 +64,9 @@ This is a common real-world dirty data problem.
 - Eden Gardens hosted 77 matches — most in IPL history
 - Wankhede Stadium second with 72 matches
 - Both are iconic cricket venues in India
+
+### 7. Who was the top scorer in each IPL season?
+- Used CTE and Window Functions (RANK) to find 
+  Orange Cap winner per season
+- CH Gayle topped twice in 2011 and 2012
+- SR Tendulkar was top scorer in 2009/10 season
