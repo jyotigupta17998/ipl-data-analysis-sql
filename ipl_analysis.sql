@@ -52,3 +52,42 @@ SELECT venue, COUNT(*) as total_matches
 FROM matches
 GROUP BY venue
 ORDER BY total_matches DESC;
+
+-- Query 7: Top scorer in each IPL season (Orange Cap)
+WITH season_ranks AS (
+    SELECT 
+        m.season,
+        d.batter,
+        SUM(d.batsman_runs) as total_runs,
+        RANK() OVER (PARTITION BY m.season 
+                     ORDER BY SUM(d.batsman_runs) DESC) as rank_in_season
+    FROM deliveries d
+    JOIN matches m ON d.match_id = m.id
+    GROUP BY m.season, d.batter
+)
+SELECT season, batter, total_runs
+FROM season_ranks
+WHERE rank_in_season = 1
+ORDER BY season;
+
+-- Query 8: Top wicket taker in each IPL season (Purple Cap)
+WITH season_wickets AS (
+    SELECT 
+        m.season,
+        d.bowler,
+        COUNT(*) as total_wickets,
+        RANK() OVER (PARTITION BY m.season 
+                     ORDER BY COUNT(*) DESC) as rank_in_season
+    FROM deliveries d
+    JOIN matches m ON d.match_id = m.id
+    WHERE d.dismissal_kind NOT IN 
+          ('run out', 'retired hurt', 
+           'obstructing the field', 'NA')
+    AND d.dismissal_kind IS NOT NULL
+    AND d.dismissal_kind != ''
+    GROUP BY m.season, d.bowler
+)
+SELECT season, bowler, total_wickets
+FROM season_wickets
+WHERE rank_in_season = 1
+ORDER BY season;
