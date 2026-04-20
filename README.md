@@ -41,6 +41,23 @@ deliveries from 2008 to 2020.
 - SL Malinga leads with 119 wickets
 - Followed by A Mishra (102) and PP Chawla (98)
 
+### 6. Which venue hosted the most matches?
+- Eden Gardens hosted 77 matches — most in IPL history
+- Wankhede Stadium second with 72 matches
+- Both are iconic cricket venues in India
+
+### 7. Who was the top scorer in each IPL season? (Orange Cap)
+- Used CTE and Window Functions (RANK) to find 
+  Orange Cap winner per season
+- CH Gayle topped twice in 2011 and 2012
+- SR Tendulkar was top scorer in 2009/10 season
+
+### 8. Who was the top wicket taker in each IPL season? (Purple Cap)
+- Used CTE and Window Functions (RANK) to find
+  Purple Cap winner per season
+- SL Malinga was most consistent wicket taker
+  across multiple seasons
+
 ## Data Quality Issue Found and Fixed
 The dismissal_kind column contained text value 'NA' 
 instead of proper NULL for non-wicket deliveries.
@@ -59,14 +76,5 @@ This is a common real-world dirty data problem.
 - JOIN across two tables
 - Data cleaning with IS NOT NULL and NOT IN
 - ORDER BY and LIMIT
-
-### 6. Which venue hosted the most matches?
-- Eden Gardens hosted 77 matches — most in IPL history
-- Wankhede Stadium second with 72 matches
-- Both are iconic cricket venues in India
-
-### 7. Who was the top scorer in each IPL season?
-- Used CTE and Window Functions (RANK) to find 
-  Orange Cap winner per season
-- CH Gayle topped twice in 2011 and 2012
-- SR Tendulkar was top scorer in 2009/10 season
+- Window Functions (RANK, PARTITION BY)
+- CTEs (Common Table Expressions)
