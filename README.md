@@ -66,6 +66,14 @@ deliveries from 2008 to 2020.
   1,744 balls — remarkable consistency
 - Used HAVING clause to filter aggregated results
 
+### 10. Who scored most runs in successful run chases?
+- Filtered second innings (inning = 2) and 
+  winning batting team only
+- G Gambhir leads with 1,251 runs in successful chases
+- Shows match winning ability under pressure
+- Different ranking from overall runs — proves 
+  context of runs matters more than volume
+
 ## Data Quality Issue Found and Fixed
 The dismissal_kind column contained text value 'NA' 
 instead of proper NULL for non-wicket deliveries.
