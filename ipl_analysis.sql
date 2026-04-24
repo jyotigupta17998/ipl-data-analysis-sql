@@ -103,3 +103,16 @@ GROUP BY batter
 HAVING balls_faced > 200
 ORDER BY strike_rate DESC
 LIMIT 10;
+
+-- Query 10: Top batsmen in successful run chases
+SELECT 
+    d.batter,
+    SUM(d.batsman_runs) as total_runs
+FROM deliveries d
+JOIN matches m ON d.match_id = m.id
+WHERE
+    d.inning = 2
+    AND d.batting_team = m.winner 
+GROUP BY d.batter 
+ORDER BY total_runs DESC
+LIMIT 10;
