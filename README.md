@@ -1,96 +1,161 @@
-# IPL Data Analysis (2008-2020)
+# 🏏 IPL Data Analysis (2008-2020)
 
-## Project Overview
-This project analyzes 12 years of IPL match data using MySQL. 
-The dataset contains 1,076 matches and 1,06,670 ball-by-ball 
-deliveries from 2008 to 2020.
+> Analyzing 12 years of IPL cricket data using 
+> MySQL to uncover team performance, player 
+> insights and match winning patterns.
 
-  ## Dataset
-- Source: Kaggle - IPL Complete Dataset 2008-2020
-- Link: https://www.kaggle.com/datasets/patrickb1912/ipl-complete-dataset-20082020
-- Tables: matches (1,076 rows) and deliveries (1,06,670 rows)
-- Note: Dataset not uploaded due to file size. 
-  Please download directly from Kaggle link above.
+---
 
-## Tools Used
+## 📌 Project Overview
+This project performs end-to-end SQL analysis 
+on IPL match data from 2008 to 2020.
+
+It covers:
+- Team performance analysis
+- Player batting and bowling insights
+- Toss and venue impact on match results
+- Chase master identification
+- Season-wise Orange and Purple Cap winners
+
+---
+
+## 📂 Dataset
+| Detail | Info |
+|---|---|
+| Source | Kaggle - IPL Complete Dataset |
+| Link | https://www.kaggle.com/datasets/patrickb1912/ipl-complete-dataset-20082020 |
+| matches table | 1,076 rows |
+| deliveries table | 1,06,670 rows |
+| Seasons covered | 2008 to 2020 |
+
+> Dataset not uploaded due to file size. 
+> Download directly from Kaggle link above.
+
+---
+
+## 🛠️ Tools Used
 - MySQL
 - MySQL Workbench
+- Power BI (Dashboard - Coming Soon)
 
-## Business Questions Answered
+---
+
+## 🗂️ Database Schema
+
+**matches table** — one row per match
+- id, season, city, date, team1, team2
+- toss_winner, toss_decision
+- winner, win_by_runs, win_by_wickets
+- player_of_match, venue
+
+**deliveries table** — one row per ball bowled
+- match_id, inning, batting_team, bowling_team
+- batter, bowler, batsman_runs, total_runs
+- dismissal_kind, is_wicket
+
+---
+
+## 📊 Key Findings At A Glance
+
+| Question | Finding |
+|---|---|
+| Most successful team | Mumbai Indians (142 wins) |
+| Toss advantage | Field first wins 54% vs bat first 45% |
+| Top run scorer | SK Raina (3,333 runs) |
+| Best chase master | G Gambhir (1,251 runs in chases) |
+| Top wicket taker | SL Malinga (119 wickets) |
+| Best strike rate | GJ Maxwell (169.71) |
+| Most matches hosted | Eden Gardens (77 matches) |
+
+---
+
+## 🔍 Business Questions Answered
 
 ### 1. Which team won the most matches?
-- Mumbai Indians dominate with 142 wins across all seasons
-- They are the most successful IPL franchise in this dataset
+- Mumbai Indians dominate with 142 wins
+- Most successful IPL franchise in history
 
-### 2. Does winning the toss help win the match?
-- Teams choosing to FIELD after winning toss won 54% of matches
-- Teams choosing to BAT after winning toss won only 45% of matches
-- Conclusion: Chasing is a clear advantage in IPL T20 format
+### 2. Does winning toss help win the match?
+- Teams choosing FIELD won 54% of matches
+- Teams choosing BAT won only 45% of matches
+- Chasing is a clear T20 advantage
 
-### 3. Who are the top 10 batsmen by total runs?
-- SK Raina leads with 3,333 runs across all seasons
-- Followed by RG Sharma (2,903) and G Gambhir (2,806)
+### 3. Who are top 10 batsmen by total runs?
+- SK Raina leads with 3,333 runs
+- RG Sharma second with 2,903 runs
+- G Gambhir third with 2,806 runs
 
-### 4. Who scored most runs in winning matches? (JOIN Query)
+### 4. Who scored most runs in winning matches?
 - Used JOIN across matches and deliveries tables
 - SK Raina scored 2,183 runs in winning matches
-- 65% of his total runs came in matches his team won
-- Shows he was not just consistent but match-winning
+- 65% of his runs came in matches his team won
 
 ### 5. Who are the top wicket takers?
 - SL Malinga leads with 119 wickets
-- Followed by A Mishra (102) and PP Chawla (98)
+- A Mishra second with 102 wickets
 
 ### 6. Which venue hosted the most matches?
-- Eden Gardens hosted 77 matches — most in IPL history
+- Eden Gardens hosted 77 matches
 - Wankhede Stadium second with 72 matches
-- Both are iconic cricket venues in India
 
-### 7. Who was the top scorer in each IPL season? (Orange Cap)
-- Used CTE and Window Functions (RANK) to find 
-  Orange Cap winner per season
+### 7. Orange Cap — Top scorer per season?
+- Used CTE and Window Functions
 - CH Gayle topped twice in 2011 and 2012
-- SR Tendulkar was top scorer in 2009/10 season
+- SR Tendulkar topped in 2009/10 season
 
-### 8. Who was the top wicket taker in each IPL season? (Purple Cap)
-- Used CTE and Window Functions (RANK) to find
-  Purple Cap winner per season
-- SL Malinga was most consistent wicket taker
-  across multiple seasons
+### 8. Purple Cap — Top wicket taker per season?
+- Used CTE and Window Functions
+- SL Malinga most consistent across seasons
 
-  ### 9. Who has the best strike rate in IPL?
-- Minimum 200 balls faced filter applied to 
-  remove small sample sizes
+### 9. Who has the best strike rate?
+- Minimum 200 balls filter applied
 - GJ Maxwell leads with 169.71 strike rate
-- V Sehwag maintained 150+ strike rate across 
-  1,744 balls — remarkable consistency
-- Used HAVING clause to filter aggregated results
+- V Sehwag maintained 150+ across 1,744 balls
 
-### 10. Who scored most runs in successful run chases?
-- Filtered second innings (inning = 2) and 
-  winning batting team only
-- G Gambhir leads with 1,251 runs in successful chases
-- Shows match winning ability under pressure
-- Different ranking from overall runs — proves 
-  context of runs matters more than volume
+### 10. Who scored most in successful run chases?
+- Filtered inning = 2 and winning batting team
+- G Gambhir leads with 1,251 runs
+- Context of runs matters more than volume
 
-## Data Quality Issue Found and Fixed
-The dismissal_kind column contained text value 'NA' 
+---
+
+## ⚠️ Data Quality Issue Found and Fixed
+The dismissal_kind column had text value NA 
 instead of proper NULL for non-wicket deliveries.
-This was identified and filtered out to get accurate wicket counts.
-This is a common real-world dirty data problem.
+Identified, investigated and fixed by filtering 
+NA values explicitly.
+This is a common real world dirty data problem.
 
-## Key Insights
-- Mumbai Indians are the most successful IPL team
-- Fielding first after winning toss gives 54% win rate
-- SK Raina is the most impactful batsman in winning matches
-- Lasith Malinga is the most successful IPL bowler
+---
 
-## SQL Concepts Used
+## 💡 SQL Concepts Used
 - GROUP BY and COUNT
 - Conditional Aggregation (CASE WHEN inside SUM)
 - JOIN across two tables
 - Data cleaning with IS NOT NULL and NOT IN
-- ORDER BY and LIMIT
+- HAVING clause for post aggregation filtering
 - Window Functions (RANK, PARTITION BY)
 - CTEs (Common Table Expressions)
+- ROUND for decimal formatting
+
+---
+
+## 📁 Repository Structure
+```
+ipl-data-analysis-sql/
+│
+├── README.md
+├── ipl_analysis.sql
+│
+└── screenshots/
+    ├── query1_team_wins.png
+    ├── query2_toss_impact.png
+    ├── query3_top_batsmen.png
+    ├── query4_batsmen_winning_matches.png
+    ├── query5_top_wickets.png
+    ├── query6_top_venues.png
+    ├── query7_orange_cap.png
+    ├── query8_purple_cap.png
+    ├── query9_strike_rate.png
+    └── query10_chase_masters.png
+```
