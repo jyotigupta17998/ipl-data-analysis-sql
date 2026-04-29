@@ -1,14 +1,14 @@
 # 🏏 IPL Data Analysis (2008-2020)
 
 > Analyzing 12 years of IPL cricket data using 
-> MySQL to uncover team performance, player 
-> insights and match winning patterns.
+> MySQL and Power BI to uncover team performance, 
+> player insights and match winning patterns.
 
 ---
 
 ## 📌 Project Overview
-This project performs end-to-end SQL analysis 
-on IPL match data from 2008 to 2020.
+This project performs end-to-end analysis on IPL 
+match data from 2008 to 2020.
 
 It covers:
 - Team performance analysis
@@ -36,7 +36,7 @@ It covers:
 ## 🛠️ Tools Used
 - MySQL
 - MySQL Workbench
-- Power BI (Dashboard - Coming Soon)
+- Power BI (Interactive 3-page Dashboard)
 
 ---
 
@@ -63,7 +63,7 @@ It covers:
 | Toss advantage | Field first wins 54% vs bat first 45% |
 | Top run scorer | SK Raina (3,333 runs) |
 | Best chase master | G Gambhir (1,251 runs in chases) |
-| Top wicket taker | SL Malinga (119 wickets) |
+| Top wicket taker | SL Malinga (133 wickets) |
 | Best strike rate | GJ Maxwell (169.71) |
 | Most matches hosted | Eden Gardens (77 matches) |
 
@@ -91,8 +91,8 @@ It covers:
 - 65% of his runs came in matches his team won
 
 ### 5. Who are the top wicket takers?
-- SL Malinga leads with 119 wickets
-- A Mishra second with 102 wickets
+- SL Malinga leads with 133 wickets
+- A Mishra second with 109 wickets
 
 ### 6. Which venue hosted the most matches?
 - Eden Gardens hosted 77 matches
@@ -140,29 +140,10 @@ This is a common real world dirty data problem.
 
 ---
 
-## 📁 Repository Structure
-```
-ipl-data-analysis-sql/
-│
-├── README.md
-├── ipl_analysis.sql
-│
-└── screenshots/
-    ├── query1_team_wins.png
-    ├── query2_toss_impact.png
-    ├── query3_top_batsmen.png
-    ├── query4_batsmen_winning_matches.png
-    ├── query5_top_wickets.png
-    ├── query6_top_venues.png
-    ├── query7_orange_cap.png
-    ├── query8_purple_cap.png
-    ├── query9_strike_rate.png
-    └── query10_chase_masters.png
-```
-
 ## 📊 Power BI Dashboard
 
-An interactive 3-page Power BI dashboard built on the same IPL dataset.
+An interactive 3-page Power BI dashboard built 
+on the same IPL dataset.
 
 ### Pages:
 - **Overview** – KPI cards (Matches, Runs, Wickets), Top 10 Run Scorers, Wins by Team
@@ -178,3 +159,38 @@ An interactive 3-page Power BI dashboard built on the same IPL dataset.
 ![Overview](power-bi-dashboard/Overview.png)
 ![Batting Analysis](power-bi-dashboard/Batting%20Analysis.png)
 ![Bowling Analysis](power-bi-dashboard/Bowling%20Analysis.png)
+
+---
+
+## 📁 Repository Structure
+```
+ipl-data-analysis-sql/
+│
+├── README.md
+├── LICENSE
+├── ipl_analysis.sql
+│
+├── screenshots/
+│   ├── query1_team_wins.png
+│   ├── query2_toss_impact.png
+│   ├── query3_top_batsmen.png
+│   ├── query4_batsmen_winning_matches.png
+│   ├── query5_top_wickets.png
+│   ├── query6_top_venues.png
+│   ├── query7_orange_cap.png
+│   ├── query8_purple_cap.png
+│   ├── query9_strike_rate.png
+│   └── query10_chase_masters.png
+│
+└── power-bi-dashboard/
+    ├── IPL-data-analysis-Power-BI.pbix
+    ├── Overview.png
+    ├── Batting Analysis.png
+    └── Bowling Analysis.png
+```
+
+---
+
+## 📄 License
+This project is licensed under the MIT License.
+See the [LICENSE](LICENSE) file for details.
