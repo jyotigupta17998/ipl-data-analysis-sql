@@ -159,3 +159,22 @@ ipl-data-analysis-sql/
     ├── query9_strike_rate.png
     └── query10_chase_masters.png
 ```
+
+## 📊 Power BI Dashboard
+
+An interactive 3-page Power BI dashboard built on the same IPL dataset.
+
+### Pages:
+- **Overview** – KPI cards (Matches, Runs, Wickets), Top 10 Run Scorers, Wins by Team
+- **Batting Analysis** – Top 10 Run Scorers, Sixes & Fours Comparison
+- **Bowling Analysis** – Top 10 Wicket Takers, Economy Rate Comparison
+
+### Features:
+- Dark theme with consistent orange color scheme
+- Interactive slicers for Season and Player filtering
+- DAX measures for Total Runs, Wickets, Sixes, Fours, Economy Rate
+
+### Dashboard Preview:
+![Overview](power-bi-dashboard/overview.png)
+![Batting Analysis](power-bi-dashboard/batting-analysis.png)
+![Bowling Analysis](power-bi-dashboard/bowling-analysis.png)
