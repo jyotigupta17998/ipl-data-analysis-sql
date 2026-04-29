@@ -175,6 +175,6 @@ An interactive 3-page Power BI dashboard built on the same IPL dataset.
 - DAX measures for Total Runs, Wickets, Sixes, Fours, Economy Rate
 
 ### Dashboard Preview:
-![Overview](power-bi-dashboard/overview.png)
-![Batting Analysis](power-bi-dashboard/batting-analysis.png)
-![Bowling Analysis](power-bi-dashboard/bowling-analysis.png)
+![Overview](power-bi-dashboard/Overview.png)
+![Batting Analysis](power-bi-dashboard/Batting%20Analysis.png)
+![Bowling Analysis](power-bi-dashboard/Bowling%20Analysis.png)
