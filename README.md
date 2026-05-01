@@ -69,11 +69,11 @@ The project is structured in two layers:
 ## 📊 Key Insights
 
 - **Chasing provides a structural advantage**, but its effectiveness varies significantly by venue  
-- **Consistency matters more than peak performance** — players with stable contributions outperform high-variance scorers  
+- **Consistency outperforms peak performance in tournament formats** — players with stable contributions outperform high-variance scorers 
+- **Top run scorers are not always the most impactful players in winning matches**  
 - **High total runs ≠ high match impact** — contribution in winning matches is more important  
 - **Toss strategy is context-dependent** — venue conditions influence whether batting or chasing is optimal  
 - **A few teams dominate long-term performance**, indicating the importance of squad stability and management  
-
 ---
 
 ## 📈 Advanced Analysis Highlights
