@@ -114,10 +114,9 @@ An interactive dashboard was built to complement SQL analysis.
 
 ### Preview:
 
-![Overview](power-bi-dashboard/Overview.png)  
-![Batting Analysis](power-bi-dashboard/Batting%20Analysis.png)  
-![Bowling Analysis](power-bi-dashboard/Bowling%20Analysis.png)
-
+![Overview](https://raw.githubusercontent.com/jyotigupta17998/ipl-data-analysis-sql/main/power-bi-dashboard/Overview.png)
+![Batting Analysis](https://raw.githubusercontent.com/jyotigupta17998/ipl-data-analysis-sql/main/power-bi-dashboard/Batting%20Analysis.png)
+![Bowling Analysis](https://raw.githubusercontent.com/jyotigupta17998/ipl-data-analysis-sql/main/power-bi-dashboard/Bowling%20Analysis.png)
 ---
 
 ## ⚠️ Data Quality Handling
